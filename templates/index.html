@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Rock Paper Scissors Game</title>
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- Tiêu đề -->
+    <header>
+
+        <h1>
+            Trò Chơi Kéo Búa Bao
+        </h1>
+
+    </header>
+
+
+    <!-- Bảng điểm -->
+    <div class="score-board">
+
+        <div id="user-label" class="badge">
+            Bạn
+        </div>
+
+        <div id="computer-label" class="badge">
+            Máy
+        </div>
+
+        <span id="user-score">
+            {{ user_score }}
+        </span>
+
+        :
+
+        <span id="computer-score">
+            {{ computer_score }}
+        </span>
+
+    </div>
+
+
+    <!-- Kết quả -->
+    <div class="result">
+
+        <p>
+            {{ result }}
+        </p>
+
+    </div>
+
+
+    <!-- Lựa chọn -->
+    <div class="choices">
+
+        <form method="POST">
+
+            <button
+                class="choice"
+                name="choice"
+                value="kéo"
+                title="Kéo"
+            >
+                ✌️
+            </button>
+
+
+            <button
+                class="choice"
+                name="choice"
+                value="búa"
+                title="Búa"
+            >
+                ✊
+            </button>
+
+
+            <button
+                class="choice"
+                name="choice"
+                value="bao"
+                title="Bao"
+            >
+                🖐️
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- Lựa chọn của người chơi và máy -->
+    {% if player %}
+
+    <div class="selected">
+
+        <p>
+            Bạn chọn:
+            <strong>{{ player }}</strong>
+        </p>
+
+        <p>
+            Máy chọn:
+            <strong>{{ computer }}</strong>
+        </p>
+
+    </div>
+
+    {% endif %}
+
+
+    <p id="action-message">
+        Lượt bạn.
+    </p>
+
+
+</body>
+
+</html>
