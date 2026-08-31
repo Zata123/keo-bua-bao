@@ -1,3 +1,3 @@
 # keo-bua-bao
 using html, css, js and python
-subcribe me 
+I don't just write code; I engineer solutions
